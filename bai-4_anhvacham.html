@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="anh1" src="https://image-us.24h.com.vn/upload/4-2020/images/2020-11-02/1604286782-fa22c5f5dc207492b114fc5d4aa888ff.jpg" alt=""
+style="position: absolute;left: 0;top: 0;" height="150"width="150">
+<img id="anh2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM6u1obDVOHgioIdBk5KFyvfUw_KMbpvhPoQ4bnfo&s" alt="" style="position: absolute;left: 500px;top: 500px;" height="150"width="150">
+<script>
+  function upArrowPressed() {
+    let element = document.getElementById("anh1");
+    element.style.top = parseInt(element.style.top) - 5 + 'px';
+  }
+  function downArrowPressed() {
+    var element = document.getElementById("anh1");
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+  }
+  function leftArrowPressed() {
+    var element = document.getElementById("anh1");
+    element.style.left = parseInt(element.style.left) - 5 + 'px';
+  }
+  function rightArrowPressed() {
+    var element = document.getElementById("anh1");
+    element.style.left = parseInt(element.style.left) + 5 + 'px';
+  }
+  function moveSelection(evt) {
+    switch (evt.keyCode) {
+      case 37:
+        leftArrowPressed();
+          checkVaCham()
+        break;
+      case 39:
+        rightArrowPressed();
+          checkVaCham()
+
+          break;
+      case 38:
+        upArrowPressed();
+          checkVaCham()
+
+          break;
+      case 40:
+        downArrowPressed();
+          checkVaCham()
+
+          break;
+    }
+  }
+  function docReady() {
+    window.addEventListener('keydown', moveSelection);
+  }
+  function checkVaCham() {
+      var element1 = document.getElementById("anh1");
+
+      var element2 = document.getElementById("anh2");
+      let x2 = parseInt(element2.style.left);
+      console.log("x2",x2)
+      let y1 = parseInt(element1.style.top);
+      let x1 = parseInt(element1.style.left);
+      console.log('x1=====', x1)
+      let y2 = parseInt(element2.style.top);
+      console.log("y1",y1)
+      console.log("....",x1+150)
+if (y1 + 150 >= 500 && 500<=x1 + 150 ) {
+    alert('ok')
+    return;
+}
+  }
+</script>
+</body>
+</html>

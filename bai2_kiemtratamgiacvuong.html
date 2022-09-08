@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt('Nhập độ dài cạnh'))
+    let b = parseInt(prompt('Nhập độ dài cạnh'))
+    let c = parseInt(prompt('Nhập độ dài cạnh'))
+    if (a + b - c <= 0 || a + c - b <= 0 || b + c - a <= 0) {
+        document.write('day khong phai la tam giac')
+    } else if (a * a == b * b + c * c || b * b == c * c + a * a || c * c == a * a + b * b) {
+        document.write('day la tam giac vuong')
+    } else {
+        document.write('day khong phai la tam giac vuong')
+    }
+
+</script>
+</body>
+</html>
